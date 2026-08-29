@@ -1,17 +1,41 @@
 aid: superpedestrian
 name: Superpedestrian
-description: 'Superpedestrian is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: >-
+  Superpedestrian was a Cambridge, Massachusetts micromobility company founded in December 2012 by
+  MIT Senseable City Lab co-inventor Assaf Biderman. It built the Copenhagen Wheel electric bicycle
+  retrofit (2017) and then the LINK shared e-scooter fleet (2020), whose differentiator was an
+  onboard Vehicle Intelligence System running self-diagnostic safety checks on every ride. It raised
+  roughly $185M (a $60M round in December 2020 and a $125M Series C in February 2022 with Citi
+  Impact Fund and Sony Innovation Fund) and at its 2022 peak ran shared fleets in about 57 cities
+  across eleven US states and seven European countries. Superpedestrian closed its US operations on
+  31 December 2023 and auctioned more than 20,000 scooters in January 2024; the European business
+  was sold to Norway's SURF Beyond in February 2024 and subsequently folded into ZEUS Mobility. The
+  company published no public developer program and no machine-readable API contract. Its only known
+  machine-readable surface was per-city GBFS feeds served for host cities at mds.linkyour.city, which
+  are offline. Both superpedestrian.com and link.city are now parked domains that answer HTTP 200 to
+  every path with a domain-parking lander, and link.city is delegated to afternic.com nameservers
+  and listed for sale.
 url: https://raw.githubusercontent.com/api-evangelist/superpedestrian/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
 x-tier: stub
 x-tier-reason: harvest
 specificationVersion: '0.20'
+x-status: defunct
+x-status-detail: Wound down its LINK shared e-scooter operations and ceased trading in 2024;
+  superpedestrian.com answers HTTP 404. Tracked here as a secondary-market entity only.
 created: '2026-08-29'
 modified: '2026-08-29'
 tags:
 - Company
+- Micromobility
+- Transportation
+- Mobility
+- Electric Scooters
+- Shared Mobility
+- Fleet Management
+- Internet of Things
+- Defunct
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -19,5 +43,35 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
-- type: Website
-  url: https://forgeglobal.com/superpedestrian_stock/
+- type: GitHubOrganization
+  url: https://github.com/Superpedestrian
+x-enrichment:
+  date: '2026-08-29'
+  status: minimal
+  artifacts_added: 1
+  pass: local-v1
+x-coverage:
+  state: none
+  reason: defunct
+  detail: >-
+    Superpedestrian shut down US operations on 2023-12-31 and sold its European business to SURF
+    Beyond and then ZEUS Mobility; superpedestrian.com and link.city are now domain-parking landers
+    that return HTTP 200 with the same '<script>window.location.href="/lander"</script>' shell for
+    every path including /openapi.json and /.well-known/agent-card.json, api./developer./docs.
+    subdomains no longer resolve in DNS, and the historical GBFS host mds.linkyour.city is gone.
+  evidence:
+  - url: https://superpedestrian.com/
+    status: 200
+  - url: https://superpedestrian.com/openapi.json
+    status: 200
+  - url: https://superpedestrian.com/.well-known/agent-card.json
+    status: 200
+  - url: https://www.superpedestrian.com/
+    status: 404
+  - url: https://api.superpedestrian.com/
+    status: 0
+  - url: https://mds.linkyour.city/gbfs/gbfs.json
+    status: 0
+  - url: https://link.city/
+    status: 200
+  checked: '2026-08-29'

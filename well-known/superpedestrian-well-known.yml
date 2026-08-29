@@ -1,0 +1,135 @@
+generated: '2026-08-29'
+method: probed
+source: https://superpedestrian.com/.well-known/ , https://link.city/.well-known/
+name: Superpedestrian well-known probe
+description: >-
+  Probe of the RFC 8615 /.well-known/ namespace on both Superpedestrian hosts. NO DOCUMENT WAS
+  FOUND. Both superpedestrian.com and link.city are PARKED DOMAINS that answer HTTP 200 to every
+  path with the same one-line domain-parking lander
+  (<script>window.location.href="/lander"</script>, Set-Cookie lander_type=parkweb). Every 200
+  recorded below is therefore a soft-200, not a served document, and NO WellKnown / SecurityTxt /
+  APICatalog pointer is emitted from this file. link.city is delegated to ns1/ns2.afternic.com,
+  i.e. it is listed for sale. Superpedestrian closed US operations 2023-12-31 and its European
+  business was sold to SURF Beyond (2024-02) and then to ZEUS Mobility (2025).
+soft_200: true
+soft_200_evidence: >-
+  Identical body on every path, including /openapi.json and /.well-known/agent-card.json:
+  '<!DOCTYPE html><html><head><script>window.onload=function(){window.location.href="/lander"}</script></head></html>'
+  Response headers carry 'set-cookie: lander_type=parkweb'.
+hosts:
+- host: superpedestrian.com
+  note: Parked domain (Cloudflare NS, GoDaddy parkweb lander). Every path soft-200s with the lander shell.
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    file: null
+    result: miss
+    note: HTML parking lander, not an RFC 9116 document.
+  - path: /.well-known/openid-configuration
+    status: 200
+    file: null
+    result: miss
+    note: HTML parking lander, not JSON.
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    file: null
+    result: miss
+    note: HTML parking lander, not JSON.
+  - path: /.well-known/api-catalog
+    status: 200
+    file: null
+    result: miss
+    note: HTML parking lander, not an RFC 9727 catalog.
+  - path: /.well-known/ai-plugin.json
+    status: 200
+    file: null
+    result: miss
+    note: HTML parking lander, not JSON.
+  - path: /.well-known/agent-card.json
+    status: 200
+    file: null
+    result: miss
+    note: HTML parking lander. Rejected per STEP 0b - not a JSON AgentCard object. No a2a/ artifact written.
+  - path: /.well-known/agent.json
+    status: 200
+    file: null
+    result: miss
+    note: Legacy pre-0.3 agent card path. HTML parking lander. Rejected.
+  - path: /llms.txt
+    status: 200
+    file: null
+    result: miss
+    note: HTML parking lander, not an llms.txt.
+  - path: /openapi.json
+    status: 200
+    file: null
+    result: miss
+    note: HTML parking lander, not an OpenAPI document.
+  - path: /robots.txt
+    status: 200
+    file: null
+    result: miss
+    note: Served, but it is the domain-parking service's generic content-signal robots.txt, not Superpedestrian's.
+- host: link.city
+  note: Former LINK e-scooter consumer domain. Parked and delegated to afternic.com nameservers (listed for sale).
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    file: null
+    result: miss
+    note: HTML parking lander.
+  - path: /.well-known/api-catalog
+    status: 200
+    file: null
+    result: miss
+    note: HTML parking lander.
+  - path: /llms.txt
+    status: 200
+    file: null
+    result: miss
+    note: HTML parking lander.
+  - path: /openapi.json
+    status: 200
+    file: null
+    result: miss
+    note: HTML parking lander.
+- host: api.superpedestrian.com
+  note: No DNS / no TCP connection (curl exit 6, could not resolve host).
+  documents:
+  - path: /
+    status: 0
+    file: null
+    result: unreachable
+    note: DNS does not resolve.
+- host: developer.superpedestrian.com
+  note: No DNS / no TCP connection.
+  documents:
+  - path: /
+    status: 0
+    file: null
+    result: unreachable
+    note: DNS does not resolve.
+- host: docs.superpedestrian.com
+  note: No DNS / no TCP connection.
+  documents:
+  - path: /
+    status: 0
+    file: null
+    result: unreachable
+    note: DNS does not resolve.
+- host: mds.linkyour.city
+  note: >-
+    Historical GBFS/MDS host for LINK shared-scooter feeds
+    (https://mds.linkyour.city/gbfs/{version}/{city}/{file}.json), referenced by third-party GBFS
+    aggregators while the fleets operated. Now gone.
+  documents:
+  - path: /gbfs/gbfs.json
+    status: 0
+    file: null
+    result: unreachable
+    note: DNS does not resolve. The only machine-readable surface Superpedestrian is known to have published is offline.
+pointer_emitted: false
+pointer_reason: >-
+  No path returned a real document. Per the pipeline rule, a WellKnown/SecurityTxt/APICatalog
+  pointer asserts the provider SERVES that surface; emitting one here would score an absence as a
+  presence.
