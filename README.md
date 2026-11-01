@@ -64,5 +64,34 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Superpedestrian is a company surfaced via the API Evangelist harvest backlog (source: secondary-market) and added to the network as a stub for full-pipeline profiling.
-- https://forgeglobal.com/superpedestrian_stock/
+> **No longer operating.** This company or product has shut down, been discontinued, or been deprecated. This profile is kept as a historical record and is not maintained or rated.
+
+Superpedestrian was a Cambridge, Massachusetts micromobility company founded in December 2012 by MIT Senseable City Lab co-inventor Assaf Biderman. It built the Copenhagen Wheel electric bicycle retrofit (2017) and then the LINK shared e-scooter fleet (2020), whose differentiator was an onboard Vehicle Intelligence System running self-diagnostic safety checks on every ride. It raised roughly $185M (a $60M round in December 2020 and a $125M Series C in February 2022 with Citi Impact Fund and Sony Innovation Fund) and at its 2022 peak ran shared fleets in about 57 cities across eleven US states and seven European countries. Superpedestrian closed its US operations on 31 December 2023 and auctioned more than 20,000 scooters in January 2024; the European business was sold to Norway's SURF Beyond in February 2024 and subsequently folded into ZEUS Mobility. The company published no public developer program and no machine-readable API contract. Its only known machine-readable surface was per-city GBFS feeds served for host cities at mds.linkyour.city, which are offline. Both superpedestrian.com and link.city are now parked domains that answer HTTP 200 to every path with a domain-parking lander, and link.city is delegated to afternic.com nameservers and listed for sale.
+
+**Areas:** Company · Micromobility · Transportation · Mobility · Electric Scooters · Shared Mobility · Fleet Management · IoT · Defunct
+
+## Superpedestrian on APIs.io (historical record)
+
+Everything profiled for Superpedestrian is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/superpedestrian/](https://apis.io/providers/superpedestrian/)** — or go straight to one of the APIs or properties below.
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [GitHub](https://github.com/Superpedestrian)
+
+## API Evangelist rating
+
+**Not rated** — this company is recorded as no longer operating, so no score is published. If it is in fact operating, say so on this repository and it will be re-profiled.
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Superpedestrian: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/superpedestrian/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
